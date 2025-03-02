@@ -11,7 +11,7 @@
     <li class="list-group-item" style="background-color:#555;border:2px solid #000">
       <a class=".text-white" style="color:#fff" href="index.php">Home</a>
     </li>
-    <li class="list-group-item" style="background-color:#555 ; border:2px solid #000">
+    <li class="list-group-item" style="background-color:red ; border:2px solid #000">
         <a class=".text-white" style="color:#fff" href="load.php"><b>CPU</b></a>
     </li>
     <li class="list-group-item" style="background-color:#555;border:2px solid #000">
