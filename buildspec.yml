@@ -1,13 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      php: 8.1
-    commands:
-      - echo "Instalando dependências..."
-      - apt-get update && apt-get install -y unzip jq
-
   pre_build:
     commands:
       - echo "Autenticando no Amazon ECR..."
