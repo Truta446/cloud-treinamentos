@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+    commands:
+      - echo "Instalando dependências..."
+      - apt-get update && apt-get install -y unzip jq
+
+  pre_build:
+    commands:
+      - echo "Autenticando no Amazon ECR..."
+      - aws --version
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_URI
+      - echo "Autenticado com sucesso!"
+
+  build:
+    commands:
+      - echo "Construindo a imagem Docker..."
+      - docker build -t $ECR_URI:$IMAGE_TAG .
+      - docker tag $ECR_URI:$IMAGE_TAG $ECR_URI:$(date +%Y%m%d%H%M)
+
+  post_build:
+    commands:
+      - echo "Empurrando a imagem Docker para o Amazon ECR..."
+      - docker push $ECR_URI:$IMAGE_TAG
+      - docker push $ECR_URI:$(date +%Y%m%d%H%M)
+      - echo "Build e push concluídos com sucesso!"
+
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: yes
