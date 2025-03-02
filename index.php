@@ -7,6 +7,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
     <title>Welcome to AWS Cloud Practitioner Essentials</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
   </head>
 
   <body style="background-color:black">
@@ -21,7 +22,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
       <?php include("get-index-meta-data.php"); ?>
       <?php include('get-docker.php'); ?>
       <?php include('get-cpu-load.php'); ?>
-      <?php echo exec('service codedeploy-agent restart > /dev/null &'); ?> 
       </p>
       <p>
       </p>
