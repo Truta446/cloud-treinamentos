@@ -27,7 +27,7 @@ try {
     $RDS_DB = 'php';
     $RDS_user = $secret['username'];
     $RDS_pwd = $secret['password'];
-    $AFF_NUM = '0';
+    $AFF_NUM = '1';
 
 } catch (AwsException $e) {
     echo "Erro ao obter as credenciais do Secrets Manager: " . $e->getMessage();

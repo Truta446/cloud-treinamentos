@@ -16,14 +16,13 @@
 			<div class="jumbotron" style="background-color:#555; color:#fff">
 
       <?php
-	include 'rds.conf.php';
+	      include 'rds.conf.php';
 
         if ($AFF_NUM == "0") {
- 		include 'rds-config.php';
-//	include 'rds-write-config.php';
+ 		      include 'rds-config.php';
         }
         else {
-		include 'rds-read-data.php';
+		      include 'rds-read-data.php';
         }
       ?>
     </div>
